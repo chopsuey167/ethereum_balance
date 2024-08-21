@@ -1,5 +1,6 @@
-package com.rga.ethereum_balance.rest;
+package com.rga.ethereum_balance.rest.controller;
 
+import com.rga.ethereum_balance.rest.dto.WalletBalanceResponseDto;
 import com.rga.ethereum_balance.service.EthereumService;
 import java.io.IOException;
 import java.math.BigInteger;
@@ -19,7 +20,10 @@ public class EthereumController {
   }
 
   @GetMapping("/{address}/balance")
-  public BigInteger getWalletBalance(@PathVariable String address) throws IOException {
-    return ethereumService.getBalance(address);
+  public WalletBalanceResponseDto getWalletBalance(@PathVariable String address) throws IOException {
+
+    BigInteger balance = ethereumService.getBalance(address);
+
+    return new WalletBalanceResponseDto(address, balance);
   }
 }
