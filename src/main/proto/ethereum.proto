@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option java_package = "com.rga.ethereum_balance.grpc.stubs";
+option java_multiple_files = true;
+
+message WalletBalanceRequest {
+  string address = 1;
+}
+
+message WalletBalanceResponse {
+  string address = 1;
+  int64 balance = 2;
+}
+
+service EthereumService {
+
+  rpc GetWalletBalance(WalletBalanceRequest) returns (WalletBalanceResponse){};
+
+}

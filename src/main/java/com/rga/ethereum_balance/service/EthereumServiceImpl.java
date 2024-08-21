@@ -19,9 +19,13 @@ public class EthereumServiceImpl implements EthereumService {
   }
 
   @Override
-  public BigInteger getBalance(String address) throws IOException {
-    EthGetBalance ethGetBalance = web3j.ethGetBalance(address, DefaultBlockParameterName.LATEST).send();
-    log.info("Address: {} , Balance: {}", address, ethGetBalance.getBalance());
-    return ethGetBalance.getBalance();
+  public BigInteger getBalance(String address) {
+    try {
+      EthGetBalance ethGetBalance = web3j.ethGetBalance(address, DefaultBlockParameterName.LATEST).send();
+      log.info("Address: {} , Balance: {}", address, ethGetBalance.getBalance());
+      return ethGetBalance.getBalance();
+    } catch (IOException e) {
+      throw new RuntimeException(e);
+    }
   }
 }
