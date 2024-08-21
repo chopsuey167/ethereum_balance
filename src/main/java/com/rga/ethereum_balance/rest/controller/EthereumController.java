@@ -20,7 +20,6 @@ public class EthereumController {
 
   @GetMapping("/{address}/balance")
   public WalletBalanceResponseDto getWalletBalance(@PathVariable String address) {
-
     BigInteger balance = ethereumService.getBalance(address);
 
     return new WalletBalanceResponseDto(address, balance);
