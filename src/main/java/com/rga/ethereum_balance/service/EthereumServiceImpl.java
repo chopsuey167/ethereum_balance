@@ -1,5 +1,6 @@
 package com.rga.ethereum_balance.service;
 
+import com.rga.ethereum_balance.exception.EthereumClientException;
 import java.io.IOException;
 import java.math.BigInteger;
 import lombok.extern.slf4j.Slf4j;
@@ -25,7 +26,7 @@ public class EthereumServiceImpl implements EthereumService {
       log.info("Address: {} , Balance: {}", address, ethGetBalance.getBalance());
       return ethGetBalance.getBalance();
     } catch (IOException e) {
-      throw new RuntimeException(e);
+      throw new EthereumClientException("Error during connection with Ethereum client", e);
     }
   }
 }

@@ -1,5 +1,6 @@
 package com.rga.ethereum_balance.grpc;
 
+import com.rga.ethereum_balance.exception.EthereumClientException;
 import com.rga.ethereum_balance.grpc.stubs.EthereumServiceGrpc;
 import com.rga.ethereum_balance.grpc.stubs.WalletBalanceRequest;
 import com.rga.ethereum_balance.grpc.stubs.WalletBalanceResponse;
@@ -31,7 +32,7 @@ public class EthereumGrpcService extends EthereumServiceGrpc.EthereumServiceImpl
           .setAddress(request.getAddress())
           .setBalance(balance.longValue()).build());
       responseObserver.onCompleted();
-    } catch (MessageDecodingException e) {
+    } catch (MessageDecodingException | EthereumClientException e) {
       log.error("Error getting balance from address {}", request.getAddress());
       StatusException exception = Status.INTERNAL.withDescription(e.getMessage()).withCause(e).asException();
       responseObserver.onError(exception);

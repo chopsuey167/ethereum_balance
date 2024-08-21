@@ -47,7 +47,6 @@
       <version>${web3j.version}</version>
     </dependency>
 
-
     <!-- gRPC implementation dependencies -->
     <dependency>
       <groupId>io.grpc</groupId>
