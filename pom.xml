@@ -16,7 +16,7 @@
   <properties>
     <java.version>17</java.version>
     <web3j.version>5.0.0</web3j.version>
-    <io.grpc.version>1.62.2</io.grpc.version>
+    <io.grpc.version>1.65.1</io.grpc.version>
     <protoc.version>3.25.1</protoc.version>
     <os-maven-plugin.version>1.7.1</os-maven-plugin.version>
     <protobuf-maven-plugin.version>0.6.1</protobuf-maven-plugin.version>

@@ -3,6 +3,8 @@ server:
 grpc:
   server:
     port: 9090
+    security:
+      enabled: false
 spring:
   application:
     name: ethereum_balance
