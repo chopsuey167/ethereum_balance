@@ -56,17 +56,17 @@ class EthereumServiceImplTest {
   @Test
   void getBalance_validAddress_throwMessageDecodingException() throws IOException {
 
-    //given
+    //Given
     Request requestEthBalance = buildEthRequest();
 
     when(web3j.ethGetBalance(ADDRESS, DefaultBlockParameterName.LATEST)).thenReturn(requestEthBalance);
     when(web3j.ethGetBalance(ADDRESS, DefaultBlockParameterName.LATEST).send()).thenThrow(
         MessageDecodingException.class);
 
-    //when
+    //When
     Executable executable = () -> ethereumService.getBalance(ADDRESS);
 
-    //then
+    //Then
     var exception = assertThrows(MessageDecodingException.class, executable);
     assertEquals(MessageDecodingException.class, exception.getClass());
 
@@ -75,17 +75,17 @@ class EthereumServiceImplTest {
   @Test
   void getBalance_validAddress_throwEthereumClientException() throws IOException {
 
-    //given
+    //Given
     Request requestEthBalance = buildEthRequest();
 
     when(web3j.ethGetBalance(ADDRESS, DefaultBlockParameterName.LATEST)).thenReturn(requestEthBalance);
     when(web3j.ethGetBalance(ADDRESS, DefaultBlockParameterName.LATEST).send()).thenThrow(
         IOException.class);
 
-    //when
+    //When
     Executable executable = () -> ethereumService.getBalance(ADDRESS);
 
-    //then
+    //Then
     var exception = assertThrows(EthereumClientException.class, executable);
     assertEquals(EthereumClientException.class, exception.getClass());
 

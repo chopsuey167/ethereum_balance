@@ -17,20 +17,19 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
-import org.springframework.test.annotation.DirtiesContext;
-import org.springframework.test.annotation.DirtiesContext.ClassMode;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
 import org.web3j.exceptions.MessageDecodingException;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest
+@SpringBootTest(properties = {
+    "grpc.server.port=-1"
+})
 @AutoConfigureMockMvc
-@DirtiesContext(classMode = ClassMode.AFTER_CLASS)
 class EthereumControllerTest {
 
-  public static final String BALANCE = "268053760463680861530139";
+  private static final String BALANCE = "268053760463680861530139";
   private static final String ADDRESS = "0xC61b9BB3A7a0767E3179713f3A5c7a9aeDCE193C";
   private static ObjectMapper mapper = new ObjectMapper();
   @MockBean
