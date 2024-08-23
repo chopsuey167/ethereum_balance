@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ethereum-balance
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: ethereum-balance
+      version: 1.0.0
+  template:
+    metadata:
+      labels:
+        app: ethereum-balance
+        version: 1.0.0
+    spec:
+      containers:
+        - name: ethereum-balance
+          image: "ethereum_balance:latest"
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8080
+              name: rest
+            - containerPort: 9090
+              name: grpc
