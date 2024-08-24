@@ -1,13 +1,20 @@
 # Ethereum Balance
 
-## About
+## Overview
 
 The primary objective of this project is to retrieve the balance of an Ethereum wallet by using its address, via API
 REST and gRPC service.
 
-## How to use
+## Prerequisites
 
-To clone and run this application, you'll need Git and Java 17 installed on your computer. From your command line:
+To clone and run this application, ensure you have the following installed on your computer:
+
+- Git
+- Java 17
+
+## Getting started
+
+Follow these steps to clone the repository, build the application, and run it:
 
 ```bash
 # Clone this repository
@@ -23,15 +30,17 @@ $ ./mvnw clean compile
 $ ./mvnw spring-boot:run
 ```
 
-### Test endpoints
+### Testing the endpoints
 
-Rest endpoint cUrl:
+REST API endpoint:
+To test the REST API endpoint, you can use the following cURL command:
 
 ```bash
 curl --location 'localhost:8080/api/v1/wallets/0xC61b9BB3A7a0767E3179713f3A5c7a9aeDCE193C/balance'
 ```
 
-gRpc Service Request:
+gRPC Service Request:
+To test the gRPC service, use the following grpcurl command:
 
 ```bash
 grpcurl -plaintext -d '{"address": "0xC61b9BB3A7a0767E3179713f3A5c7a9aeDCE193C" }' localhost:9090 EthereumService/GetWalletBalance
@@ -39,39 +48,42 @@ grpcurl -plaintext -d '{"address": "0xC61b9BB3A7a0767E3179713f3A5c7a9aeDCE193C" 
 
 # Running test
 
-To execute run application tests, from your command line:
+To execute the application tests, run the following command:
 
 ```bash
 ./mvnw clean verify
 ```
 
-## Run application with Docker
+## Running the application with Docker
 
-To build application, create docker image and run. From your command line (inside project directory):
+To Containerize application ensure are installed Docker.
+
+You can build the application, create a Docker image, and run it using the following command (executed from within the
+project directory):
 
 ```bash
 sh build_run.sh
 ```
 
-How to test endpoints <a href="#Test-endpoints">here</a>
+Refer to the  <a href="#Test-endpoints">Testing the Endpoints</a> section for instructions on how to test the endpoints.
 
-## Deploy k8s cluster locally
+## Deploying a Kubernetes Cluster Locally
 
-To perform this action you'll need the following tools installed in your computer:
+To deploy the application on a local Kubernetes cluster, ensure the following tools are installed and configured:
 
-- Kubernetes feature need to be active in docker dashboard
+- Docker (with Kubernetes enabled)
 - Minikube
-- kubectl cli
+- kubectl CLI
 
-From your command line (inside project directory):
+Then, run the following command from within the project directory:
 
 ```bash
 sh deploy_k8_cluster.sh
 ```
 
-How to test endpoints <a href="#Test-endpoints">here</a>
+Refer to the  <a href="#Test-endpoints">Testing the Endpoints</a> section for instructions on how to test the endpoints.
 
 ## API Documentation
 
-You can see api documentation in the following [link](http://localhost:8080/swagger-ui/index.html) (after start
-application):
+You can view the API documentation by visiting the following link after starting the
+application:  [Swagger UI](http://localhost:8080/swagger-ui/index.html) 
