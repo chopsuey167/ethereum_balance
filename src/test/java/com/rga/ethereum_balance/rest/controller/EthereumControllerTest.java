@@ -67,6 +67,6 @@ class EthereumControllerTest {
     );
     //Then
     response.andDo(print())
-        .andExpect(status().isInternalServerError());
+        .andExpect(status().isBadRequest());
   }
 }

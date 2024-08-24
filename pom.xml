@@ -22,6 +22,7 @@
     <protobuf-maven-plugin.version>0.6.1</protobuf-maven-plugin.version>
     <grpc-spring-boot-starter.version>3.0.0.RELEASE</grpc-spring-boot-starter.version>
     <annotation-api.version>1.3.2</annotation-api.version>
+    <open-api.version>2.0.2</open-api.version>
   </properties>
   <dependencies>
     <!-- Rest implementation dependencies -->
@@ -80,6 +81,12 @@
       <version>${grpc-spring-boot-starter.version}</version>
     </dependency>
 
+    <!-- open api  -->
+    <dependency>
+      <groupId>org.springdoc</groupId>
+      <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+      <version>${open-api.version}</version>
+    </dependency>
   </dependencies>
 
   <build>

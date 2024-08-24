@@ -11,3 +11,6 @@ spring:
 ethereum:
   node:
     url: "https://mainnet.infura.io/v3/533e2b5e47ff423396cef0f988195723"
+springdoc:
+  api-docs:
+    path: "/api-docs"

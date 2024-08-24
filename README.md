@@ -71,3 +71,7 @@ sh deploy_k8_cluster.sh
 
 How to test endpoints <a href="#Test-endpoints">here</a>
 
+## API Documentation
+
+You can see api documentation in the following [link](http://localhost:8080/swagger-ui/index.html) (after start
+application):
