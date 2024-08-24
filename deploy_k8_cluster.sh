@@ -16,6 +16,3 @@ kubectl apply -f devops/kubernetes/service.yaml
 
 # Minikube tunnel
 minikube tunnel
-
-# kubectl delete service --all --namespace=default
-# kubectl delete deployment --all --namespace=default
