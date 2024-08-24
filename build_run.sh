@@ -1,5 +1,6 @@
 #! /bin/bash
 # Build application
+./mvnw clean compile
 ./mvnw clean package -DskipTests
 # Create docker image
 docker build -t ethereum_balance:latest .
