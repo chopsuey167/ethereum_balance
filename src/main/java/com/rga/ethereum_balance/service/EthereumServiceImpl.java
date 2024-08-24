@@ -26,6 +26,7 @@ public class EthereumServiceImpl implements EthereumService {
       log.info("Address: {} , Balance: {}", address, ethGetBalance.getBalance());
       return ethGetBalance.getBalance();
     } catch (IOException e) {
+      log.error("Error during connection with Ethereum client", e);
       throw new EthereumClientException("Error during connection with Ethereum client", e);
     }
   }
