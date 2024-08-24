@@ -33,6 +33,7 @@ $ ./mvnw spring-boot:run
 ### Testing the endpoints
 
 REST API endpoint:
+
 To test the REST API endpoint, you can use the following cURL command:
 
 ```bash
@@ -40,13 +41,14 @@ curl --location 'localhost:8080/api/v1/wallets/0xC61b9BB3A7a0767E3179713f3A5c7a9
 ```
 
 gRPC Service Request:
+
 To test the gRPC service, use the following grpcurl command:
 
 ```bash
 grpcurl -plaintext -d '{"address": "0xC61b9BB3A7a0767E3179713f3A5c7a9aeDCE193C" }' localhost:9090 EthereumService/GetWalletBalance
 ```
 
-# Running test
+## Running test
 
 To execute the application tests, run the following command:
 
@@ -65,7 +67,8 @@ project directory):
 sh build_run.sh
 ```
 
-Refer to the  <a href="#Test-endpoints">Testing the Endpoints</a> section for instructions on how to test the endpoints.
+Refer to the  <a href="#Testing-the-endpoints">Testing the Endpoints</a> section for instructions on how to test the
+endpoints.
 
 ## Deploying a Kubernetes Cluster Locally
 
@@ -81,7 +84,8 @@ Then, run the following command from within the project directory:
 sh deploy_k8_cluster.sh
 ```
 
-Refer to the  <a href="#Test-endpoints">Testing the Endpoints</a> section for instructions on how to test the endpoints.
+Refer to the  <a href="#Testing-the-endpoints">Testing the Endpoints</a> section for instructions on how to test the
+endpoints.
 
 ## API Documentation
 
