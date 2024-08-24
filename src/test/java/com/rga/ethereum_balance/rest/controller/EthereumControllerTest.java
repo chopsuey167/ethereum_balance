@@ -40,11 +40,7 @@ class EthereumControllerTest {
   @Test
   void getWalletBalance_validAddress_success() throws Exception {
     //Given
-    WalletBalanceResponseDto expectedResponse = WalletBalanceResponseDto.builder()
-        .address(ADDRESS)
-        .balance(new BigInteger(BALANCE))
-        .build();
-
+    WalletBalanceResponseDto expectedResponse = new WalletBalanceResponseDto(ADDRESS, new BigInteger(BALANCE));
     when(ethereumService.getBalance(ADDRESS)).thenReturn(new BigInteger(BALANCE));
 
     //When

@@ -13,8 +13,7 @@ import org.web3j.protocol.exceptions.ClientConnectionException;
 public class GlobalExceptionHandler {
 
   private static ErrorDto buildErrorDto(String e) {
-    return ErrorDto.builder().status(HttpStatus.INTERNAL_SERVER_ERROR)
-        .message(e).build();
+    return new ErrorDto(HttpStatus.INTERNAL_SERVER_ERROR, e);
   }
 
   @ExceptionHandler(MessageDecodingException.class)
