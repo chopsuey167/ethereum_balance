@@ -86,4 +86,10 @@ Refer to the  <a href="#Test-endpoints">Testing the Endpoints</a> section for in
 ## API Documentation
 
 You can view the API documentation by visiting the following link after starting the
-application:  [Swagger UI](http://localhost:8080/swagger-ui/index.html) 
+application:  [Swagger UI](http://localhost:8080/swagger-ui/index.html)
+
+## Possible improvements
+
+- gRPC service documentation
+- Implement spring security
+- CI/CD pipeline
