@@ -56,7 +56,7 @@ To execute the application tests, run the following command:
 
 ## Running the application with Docker
 
-To Containerize application ensure are installed Docker.
+To containerize application ensure is installed Docker.
 
 You can build the application, create a Docker image, and run it using the following command (executed from within the
 project directory):
